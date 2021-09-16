@@ -25,17 +25,32 @@ namespace IncreaseManifestVersion
 						if (versionPosition > 0)
 						{
 							int versionStart = fileContent.IndexOf("\"", versionPosition + 10) + 1;
-							int versionEnd = fileContent.IndexOf("\"", versionStart + 2) - 1;
+							int versionEnd = fileContent.IndexOf("\"", versionStart + 1) - 1;
 
 							string stringVersion = fileContent.Substring(versionStart, versionEnd - versionStart + 1);
+							if (!stringVersion.Contains('.'))
+							{
+								// Version-TryParse require the following format: major.minor[.build[.revision]]
+								// If version in json file has only a major version, add ".0"
+								stringVersion += ".0";
+							}
 							if (Version.TryParse(stringVersion, out Version version))
 							{
-								version = new Version(version.Major, version.Minor, version.Build, version.Revision + 1);
+								// If Build and/or Revision is not present in the original file, set them to 0
+								int useBuild = (version.Build >= 0) ? version.Build : 0;
+								int useRevision = (version.Revision >= 0) ? version.Revision : 0;
 
+								// Create new version number
+								version = new Version(version.Major, version.Minor, useBuild, useRevision + 1);
+
+								// Replace version string in file content
 								string stringToBeReplaced = fileContent.Substring(versionPosition, versionEnd - versionPosition + 2);
 								string newString = $"\"Version\": \"{version}\"";
 								fileContent = fileContent.Replace(stringToBeReplaced, newString);
+
+								// Replace file
 								System.IO.File.WriteAllText(args[0], fileContent);
+								Console.WriteLine($"The version in file '{args[0]}' increased to {version}.");
 							}
 							else
 							{
