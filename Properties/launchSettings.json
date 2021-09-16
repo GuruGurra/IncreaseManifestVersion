@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IncreaseManifestVersion": {
+      "commandName": "Project",
+      "commandLineArgs": "\".\\manifest.json\""
+    }
+  }
+}

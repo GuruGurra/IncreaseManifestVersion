@@ -1,0 +1,133 @@
+{
+  "Actions": [
+{
+    "Icon": "Images/actionicon_midi",
+    "Name": "Control Change",
+    "States": [
+    {
+        "Image": "Images/keyimage_midiCC",
+        "TitleAlignment": "middle",
+        "FontSize": "12"
+    },
+    {
+        "Image": "Images/keyimage_midiCC",
+        "TitleAlignment": "middle",
+        "FontSize": "12"
+    }
+    ],
+    "Tooltip": "Send a MIDI Control Change command to any MIDI device/daw",
+    "UUID": "se.trevligaspel.midi.controlchange",
+    "PropertyInspectorPath": "PropertyInspector/PluginActionControlChange.html"
+},
+{
+    "Icon": "Images/actionicon_midi",
+    "Name": "Program Change",
+    "States": [
+    {
+        "Image": "Images/keyimage_midiPC",
+        "TitleAlignment": "middle",
+        "FontSize": "12"
+    }
+    ],
+    "Tooltip": "Send a MIDI Program Change command to any MIDI device/daw",
+    "UUID": "se.trevligaspel.midi.programchange",
+    "PropertyInspectorPath": "PropertyInspector/PluginActionProgramChange.html"
+},
+{
+    "Icon": "Images/actionicon_midi",
+    "Name": "Note On/Off",
+    "States": [
+    {
+        "Image": "Images/keyimage_midiNO",
+        "TitleAlignment": "middle",
+        "FontSize": "12"
+    },
+    {
+        "Image": "Images/keyimage_midiNO",
+        "TitleAlignment": "middle",
+        "FontSize": "12"
+    }
+    ],
+    "Tooltip": "Send a MIDI Note On/Off to any MIDI device/daw",
+    "UUID": "se.trevligaspel.midi.noteon",
+    "PropertyInspectorPath": "PropertyInspector/PluginActionNoteOn.html"
+},
+{
+    "Icon": "Images/actionicon_midi",
+    "Name": "Sysex",
+    "States": [
+    {
+        "Image": "Images/keyimage_midiSysEx",
+        "TitleAlignment": "middle",
+        "FontSize": "12"
+    },
+    {
+        "Image": "Images/keyimage_midiSysEx",
+        "TitleAlignment": "middle",
+        "FontSize": "12"
+    }
+    ],
+    "Tooltip": "Send a Sysex message to any MIDI device/daw",
+    "UUID": "se.trevligaspel.midi.sysex",
+    "PropertyInspectorPath": "PropertyInspector/PluginActionSysex.html"
+},
+ {
+      "Icon": "Images/actionicon_midi",
+      "Name": "Midi Show Control",
+      "States": [
+        {
+          "Image": "Images/keyimage_MSC",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "Tooltip": "Send a Midi Show Control command to any MIDI device",
+      "UUID": "se.trevligaspel.midi.msc",
+      "PropertyInspectorPath": "PropertyInspector/PluginActionMSC.html"
+    },
+ {
+      "Icon": "Images/actionicon_midi",
+      "Name": "Mackie Control",
+      "States": [
+        {
+          "Image": "Images/keyimage_MCU",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        },
+        {
+          "Image": "Images/keyimage_MCU",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "Tooltip": "Send a Mackie Control command to any MIDI device/daw",
+      "UUID": "se.trevligaspel.midi.mcu",
+      "PropertyInspectorPath": "PropertyInspector/PluginActionMCU.html"
+    }
+  ],
+  "Author": "Trevliga Spel",
+  "Name": "Midi",
+  "Description": "Control any Daw or Midi device using Control Change, Program Change, Note On/Off, Sysex, Mackie Control and Midi Show Control messages.",
+  "Icon": "Images/pluginicon",
+  "URL": "https://trevligaspel.se/streamdeck/midi/index.html",
+  "Version": "2.0.4.48",
+  "CodePath": "PC/se.trevligaspel.midi.exe",
+  "CodePathWin": "PC/se.trevligaspel.midi.exe",
+  "CodePathMac": "Mac/se.trevligaspel.midi",
+  "Category": "Midi",
+  "CategoryIcon": "Images/categoryicon",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    },
+    {
+        "Platform": "mac", 
+        "MinimumVersion" : "10.11"
+    }
+  ],
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "4.3"
+  }
+}
